@@ -1,17 +1,10 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class x만큼_간격이_있는_n개의_숫자 {
-    boolean solution(String s) {
-        int count = 0;
-
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == 'p' | s.charAt(i) == 'P') {
-                count++;
-            } else if (s.charAt(i) == 'y' | s.charAt(i) == 'Y') {
-                count--;
-            }
+    public long[] solution(int x, int n) {
+        long[] result = new long[n];
+        result[0] = x;
+        for (int i = 1; i < n; i++) {
+            result[i] = result[i - 1] + x;
         }
-        return count == 0;
+        return result;
     }
 }
